@@ -7,6 +7,8 @@
 
 body{
     background-color: #F7F4C8;
+    overflow: hidden;
+    position: relative;
 }
 
 #app{
@@ -76,3 +78,15 @@ body{
 canvas{
     border-radius: 0% 0% 5% 5%;
 }
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+   }
