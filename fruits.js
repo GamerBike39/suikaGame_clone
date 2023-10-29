@@ -64,18 +64,18 @@ export const FRUITS = [
         scoreValue: 50
 
     },
-    {
-        label: "melon",
-        radius: 270 / 2,
-        color: "#89CE13",
-        url: "melon.webp",
-        scoreValue: 60
-    },
-    {
-        label: "watermelon",
-        radius: 300 / 2,
-        color: "#26AA1E",
-        url: "watermelon.webp",
-        scoreValue: 100
-    },
+    // {
+    //     label: "melon",
+    //     radius: 270 / 2,
+    //     color: "#89CE13",
+    //     url: "melon.webp",
+    //     scoreValue: 60
+    // },
+    // {
+    //     label: "watermelon",
+    //     radius: 300 / 2,
+    //     color: "#26AA1E",
+    //     url: "watermelon.webp",
+    //     scoreValue: 100
+    // },
 ];

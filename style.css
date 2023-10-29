@@ -1,6 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
 
 body{
     background-color: #F7F4C8;
@@ -19,21 +22,57 @@ body{
     border-radius: 10% 10% 0 10%;
 }
 
-.score, .rules{
+.score{
     font-size: 60px;
-    font-weight: bold;
-    color: #292926;
-    /* text-shadow: 0 0px 5px #000; */
+    font-weight: 900;
+    color: #F7F4C8;
+    text-shadow: 0 0px 4px #000;
     display: flex;
   height: 100%;
   width: 100%;
 }
 
-.score > div, .rules > div{
+.score > div{
     margin: 0 10px;
     height: 100%;
     width: 100%;
     display: flex;
-    align-items: start;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.rules{
+    display: flex;
+    width: 100%;
+}
+
+#regle{
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+#regle > div{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fruitLabel{
+    font-size: 20px;
+    font-weight: 900;
+    color: #F7F4C8;
+    text-shadow: 0 0px 4px #000;
+}
+
+canvas{
+    border-radius: 0% 0% 5% 5%;
 }

@@ -66,6 +66,21 @@ let scoreValueOrigine = (index) => {
 let scoreValue = 0;
 let scorePrint = document.getElementById("scoreValue");
 scorePrint.innerText = scoreValue;
+let highScore = document.getElementById("highScoreValue");
+let highScoreValue = localStorage.getItem("highScore") || 0;
+
+function updateHighScore() {
+  if (scoreValue > highScoreValue) {
+    highScoreValue = scoreValue;
+    localStorage.setItem("highScore", highScoreValue);
+  }
+  highScore.innerText = highScoreValue;
+}
+updateHighScore();
+
+
+
+
 
 function addCurrentFruit() {
   const randomFruit = getRandomFruit();
@@ -190,14 +205,44 @@ Events.on(engine, "collisionStart", (event) => {
       scoreValue += scoreValueOrigine(index + 1); // on ajoute le score du fruit suivant
       scorePrint.innerHTML = scoreValue; // on affiche le score
 
+
     }
     if ((bodyA.label === "topLine" || bodyB.label === "topLine") && !disableActionAddFruit) {
       // si le fruit touche la ligne du haut, on le supprime
       alert("Game over");
     }
+    updateHighScore();
   });
 });
 
 
 
 addCurrentFruit();
+
+// affichage des règles du jeu
+const imgPath = FRUITS.map((fruit) => {
+  return `<img src="./${fruit.label}.webp" alt="${fruit.label}" width=50 height=50/>`;
+});
+const rulesScore = FRUITS.map((fruit) => {
+  return `<p>${fruit.scoreValue} points</p>`;
+}
+);
+const rulesName = FRUITS.map((fruit) => {
+  return `<p class="fruitLabel">${fruit.label}</p>`;
+}
+);
+// regle.innerHTML = imgPath.join("");
+// creation d'un tableau pour afficher les images, les scores et les noms des fruits
+const rules = [];
+for (let i = 0; i < FRUITS.length; i++) {
+  rules.push(imgPath[i], rulesScore[i], rulesName[i]);
+}
+
+// affichage des images, des scores et des noms des fruits, ces 3 données regroupées par div
+const rulesDiv = document.getElementById("regle");
+for (let i = 0; i < rules.length; i += 3) {
+  const div = document.createElement("div");
+  div.innerHTML = rules[i] + rules[i + 1] + rules[i + 2];
+  rulesDiv.appendChild(div);
+
+}
