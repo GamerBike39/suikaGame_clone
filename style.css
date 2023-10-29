@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: #F7F4C8;
+}
+
+#app{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 98svh;
+    width: 98vw;
+    
+}
+
+#game{
+    border-radius: 10% 10% 0 10%;
+}
+
+.score, .rules{
+    font-size: 60px;
+    font-weight: bold;
+    color: #292926;
+    /* text-shadow: 0 0px 5px #000; */
+    display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.score > div, .rules > div{
+    margin: 0 10px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
